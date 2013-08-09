@@ -20,21 +20,30 @@
 			
 		dataForThisDecade = DECADE_DATA[numStringLength - 1]
 		oneChar = dataForThisDecade[0]
-		oneChars = oneChar + oneChar + oneChar
 		fiveChar = dataForThisDecade[1]
 		tenChar = dataForThisDecade[2]
 		
 		digit = Number numString[0]
 
 		switch Number numString[0]
-			when 1, 2, 3
-				result += oneChars.substr 0, digit
+			when 1
+				result += oneChar
+			when 2
+				result += oneChar + oneChar
+			when 3
+				result += oneChar + oneChar + oneChar
 			when 4
-				result += oneChars[0] + fiveChar
-			when 5, 6, 7, 8
-				result += fiveChar + oneChars.substr 0, digit - 5
+				result += oneChar + fiveChar
+			when 5
+				result += fiveChar
+			when 6
+				result += fiveChar + oneChar
+			when 7
+				result += fiveChar + oneChar + oneChar
+			when 8
+				result += fiveChar + oneChar + oneChar + oneChar
 			when 9
-				result += oneChars[0] + tenChar
+				result += oneChar + tenChar
 			
 		result + handleFirstDigit numString.substr 1
 		
