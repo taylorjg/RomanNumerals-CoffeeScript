@@ -4,10 +4,10 @@
 		return "num is too big!"
 	
 	DECADE_DATA = [
-		["III", "V", "X"],
-		["XXX", "L", "C"],
-		["CCC", "D", "M"],
-		["MMM"]
+		["I", "V", "X"],
+		["X", "L", "C"],
+		["C", "D", "M"],
+		["M"]
 	]
 
 	handleFirstDigit = (numString) ->
@@ -19,22 +19,23 @@
 			return result
 			
 		dataForThisDecade = DECADE_DATA[numStringLength - 1]
-		oneChars = dataForThisDecade[0]
+		oneChar = dataForThisDecade[0]
+		oneChars = oneChar + oneChar + oneChar
 		fiveChar = dataForThisDecade[1]
 		tenChar = dataForThisDecade[2]
 		
 		digit = Number numString[0]
-		
-		if digit >= 1 and digit <= 3
-			result += oneChars.substr 0, digit
-		else if digit is 4
-			result += oneChars[0] + fiveChar
-		else if digit >= 5 and digit <= 8
-			result += fiveChar
-			result += oneChars.substr 0, digit - 5
-		else if digit is 9
-			result += oneChars[0] + tenChar
 
+		switch Number numString[0]
+			when 1, 2, 3
+				result += oneChars.substr 0, digit
+			when 4
+				result += oneChars[0] + fiveChar
+			when 5, 6, 7, 8
+				result += fiveChar + oneChars.substr 0, digit - 5
+			when 9
+				result += oneChars[0] + tenChar
+			
 		result + handleFirstDigit numString.substr 1
 		
 	handleFirstDigit num.toString()
