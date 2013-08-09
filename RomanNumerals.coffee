@@ -12,39 +12,27 @@
 
 	handleFirstDigit = (numString) ->
 	
-		result = ""
-		
 		numStringLength = numString.length
 		if numStringLength is 0
-			return result
+			return ""
 			
 		dataForThisDecade = DECADE_DATA[numStringLength - 1]
-		oneChar = dataForThisDecade[0]
-		fiveChar = dataForThisDecade[1]
-		tenChar = dataForThisDecade[2]
+		i = dataForThisDecade[0]
+		v = dataForThisDecade[1]
+		x = dataForThisDecade[2]
 		
-		digit = Number numString[0]
-
-		switch Number numString[0]
-			when 1
-				result += oneChar
-			when 2
-				result += oneChar + oneChar
-			when 3
-				result += oneChar + oneChar + oneChar
-			when 4
-				result += oneChar + fiveChar
-			when 5
-				result += fiveChar
-			when 6
-				result += fiveChar + oneChar
-			when 7
-				result += fiveChar + oneChar + oneChar
-			when 8
-				result += fiveChar + oneChar + oneChar + oneChar
-			when 9
-				result += oneChar + tenChar
-			
+		result = switch Number numString[0]
+			when 1 then i
+			when 2 then i + i
+			when 3 then i + i + i
+			when 4 then i + v
+			when 5 then v
+			when 6 then v + i
+			when 7 then v + i + i
+			when 8 then v + i + i + i
+			when 9 then i + x
+			else ""
+				
 		result + handleFirstDigit numString.substr 1
 		
 	handleFirstDigit num.toString()
