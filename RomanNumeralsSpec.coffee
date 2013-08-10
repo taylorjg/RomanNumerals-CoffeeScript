@@ -1,7 +1,7 @@
-﻿describe "Roman Numerals Tests", ->
+﻿describe "Tests for RomanNumerals-CoffeeScript", ->
 
 	it_multiple(
-		"returns 'expected' when given 'num'",
+		"when given this num it returns this string",
 		(num, expected) ->
 			actual = romanNumerals num
 			expect(actual).toBe expected
