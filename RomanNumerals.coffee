@@ -14,14 +14,11 @@
 
 		numString = num.toString()
 		firstDigit = Number numString[0]
-		restOfNum = numString.substr 1
+		restOfNumString = numString.substr 1
 			
-		dataForThisDecade = DECADE_DATA[restOfNum.length]
-		i = dataForThisDecade[0]
-		v = dataForThisDecade[1]
-		x = dataForThisDecade[2]
+		[i, v, x] = DECADE_DATA[restOfNumString.length]
 		
-		result = switch firstDigit
+		firstConvertedDigit = switch firstDigit
 			when 1 then i
 			when 2 then i + i
 			when 3 then i + i + i
@@ -33,6 +30,7 @@
 			when 9 then i + x
 			else ""
 
-		result + if restOfNum isnt "" then recursivelyConvert Number restOfNum else ""
+		restOfConvertedDigits = if restOfNumString isnt "" then recursivelyConvert Number restOfNumString else ""
+		firstConvertedDigit + restOfConvertedDigits
 		
 	recursivelyConvert num
