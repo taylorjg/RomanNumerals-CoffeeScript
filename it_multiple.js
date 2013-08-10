@@ -14,7 +14,7 @@
                 (function (testCase) {
                     var formattedTestCase = "(" + JSON.stringify(testCase) + ")";
                     it(description + formattedTestCase, function () {
-						fn.apply(this, testCase);
+                        fn.apply(this, testCase);
                     });
                 } (testCases[i]));
             }
