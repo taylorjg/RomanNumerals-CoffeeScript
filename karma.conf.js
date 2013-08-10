@@ -9,13 +9,16 @@ module.exports = function(config) {
 
 
     // frameworks to use
-    frameworks: ["jasmine"],
+    frameworks: [
+		"jasmine"
+	],
 
 
     // list of files / patterns to load in the browser
     files: [
-      "RomanNumerals.coffee",
-      "RomanNumeralsSpec.coffee"
+		"it_multiple.js",
+		"RomanNumerals.coffee",
+		"RomanNumeralsSpec.coffee"
     ],
 
 
@@ -27,7 +30,7 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: "dots", "progress", "junit", "growl", "coverage"
-    reporters: ["progress"],
+    reporters: ["progress", "dots"],
 
 
     // web server port
@@ -65,5 +68,5 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
     singleRun: true
-  });
+	});
 };
