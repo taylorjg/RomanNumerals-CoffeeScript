@@ -10,18 +10,18 @@
 		["M"]
 	]
 
-	handleFirstDigit = (numString) ->
-	
-		numStringLength = numString.length
-		if numStringLength is 0
-			return ""
+	recursivelyConvert = (num) ->
+
+		numString = num.toString()
+		firstDigit = Number numString[0]
+		restOfNum = numString.substr 1
 			
-		dataForThisDecade = DECADE_DATA[numStringLength - 1]
+		dataForThisDecade = DECADE_DATA[restOfNum.length]
 		i = dataForThisDecade[0]
 		v = dataForThisDecade[1]
 		x = dataForThisDecade[2]
 		
-		result = switch Number numString[0]
+		result = switch firstDigit
 			when 1 then i
 			when 2 then i + i
 			when 3 then i + i + i
@@ -32,7 +32,7 @@
 			when 8 then v + i + i + i
 			when 9 then i + x
 			else ""
-				
-		result + handleFirstDigit numString.substr 1
+
+		result + if restOfNum isnt "" then recursivelyConvert Number restOfNum else ""
 		
-	handleFirstDigit num.toString()
+	recursivelyConvert num
