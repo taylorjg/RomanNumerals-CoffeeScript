@@ -6,8 +6,8 @@
 		->
 			for testCase in testCases
 				do (testCase) ->
-                    formattedTestCase = "(" + JSON.stringify(testCase) + ")"
-                    it description + formattedTestCase, -> fn.apply this, testCase
+					formattedTestCase = "(" + JSON.stringify(testCase) + ")"
+					it description + formattedTestCase, -> fn.apply this, testCase
 	)
 
 (exports ? this).it_multiple = it_multiple
