@@ -16,8 +16,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		"it_multiple.js",
 		"RomanNumerals.coffee",
+		"it_multiple.coffee",
 		"RomanNumeralsSpec.coffee"
     ],
 
