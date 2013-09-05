@@ -12,9 +12,9 @@
 	result = ""
 	numString = num.toString()
 	numDigits = numString.length
-	for char, index in numString
-		decadeIndex = numDigits - index - 1
-		[i, v, x] = DECADE_DATA[decadeIndex]
+	decadeIndex = numDigits - 1
+	for char in numString
+		[i, v, x] = DECADE_DATA[decadeIndex--]
 		result += switch char
 			when "1" then i
 			when "2" then i + i
