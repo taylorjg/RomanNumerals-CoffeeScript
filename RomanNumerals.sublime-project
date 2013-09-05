@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/Users/taylojo/Documents/Visual Studio 2010/Projects/RomanNumerals-CoffeeScript"
+		}
+	],
+	"build_systems":
+    [
+        {
+            "name": "Karma",
+        	//"cmd": ["karma", "start", "karma.conf.js"]
+        	"cmd": ["node", "C:\\Users\\taylojo\\AppData\\Roaming\\npm\\node_modules\\karma\\bin\\karma", "start", "karma.conf.js"]
+        }
+    ]
+}
