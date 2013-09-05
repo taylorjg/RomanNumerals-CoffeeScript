@@ -6,10 +6,10 @@
 		}
 	],
 	"build_systems":
-    [
-        {
-            "name": "Karma",
-        	"cmd": ["node", "C:\\Users\\taylojo\\AppData\\Roaming\\npm\\node_modules\\karma\\bin\\karma", "start", "karma.conf.js"]
-        }
-    ]
+	[
+		{
+			"name": "Karma",
+			"cmd": ["node", "C:\\Users\\taylojo\\AppData\\Roaming\\npm\\node_modules\\karma\\bin\\karma", "start", "karma.conf.js"]
+		}
+	]
 }
